@@ -1,6 +1,6 @@
 .tela-perfil {
     background-color: #F1F4F5;
-    height: 120vh;
+    height: 150vh;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -55,3 +55,29 @@
     border: 1px solid #ccc;
     margin: 0 auto;
   }
+
+.perfil {
+    justify-content: space-around;
+    display: flex;
+    width: 15%;
+
+}
+
+.sair {
+text-decoration: none;
+color: white;
+border: 1px solid #ffffff;
+border-radius: 15px;
+width: 80px;
+}
+
+.sair h2 {
+  font-size: 20px;
+  margin-top: 12px;
+}
+
+.sair:hover {
+  background-color: #ffffff6e;
+  transition: 0.5s;
+}
+

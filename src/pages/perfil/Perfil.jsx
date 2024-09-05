@@ -25,9 +25,13 @@ const Perfil = () => {
           </Link>
         </div>
         <div className="perfil">
+        <Link className="sair" to="/">
+            <h2>Sair</h2>
+          </Link>
           <Link to="/Perfil">
             <img src={imgperfil} alt="perfil" />
           </Link>
+          
         </div>
       </div>
 

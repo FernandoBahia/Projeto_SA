@@ -1,7 +1,8 @@
 import React from "react";
 import "../css/Navbar.css";
-import "../css/Cadastro.css";
+import "../css/Recuperacao.css";
 import logo from "../../assets/logo1.png";
+import profile from "../../assets/profile.png";
 import { Link } from "react-router-dom";
 
 function IrParaLogin() {
@@ -12,9 +13,9 @@ function IrParaCadastro() {
   window.location.href = "/Cadastro";
 }
 
-const CadastroAdmin = () => {
+const Recuperacao = () => {
   return (
-    <div className="tela-cadastroadmin">
+    <div className="tela-recuperacao">
       <div className="navbar">
         <div className="logo">
           <a href="/">
@@ -30,33 +31,33 @@ const CadastroAdmin = () => {
           </button>
         </div>
       </div>
-      <div className="cadastro-container">
-        <form>
-          <br />
-          <br />
-          <h4 className="bemvindo">Cadastrar-se como Administrador</h4>
-          <br />
-          <label className="labelEmail">Email:</label>
+      <h1>Esqueceu sua Senha?</h1>
+      <div className="div-recuperacao">
+        <div className="div-email">
+          <h2><span className="gradient">Email</span></h2>
+          <form >
+          <p>Qual seu e-mail cadastro?</p>
           <input type="email" name="email" placeholder="Digite seu email" />
-          <label className="labelEmail">CPF:</label>
-          <input type="email" name="email" placeholder="Digite seu CPF" />
-          <label className="labelAdmin">Senha:</label>
+          <button type="submit">Enviar</button>
+          </form>
+          
+        </div>
+        <div className="div-codigo-email">
+            <h3><span className="gradient">Acabamos de enviar um código para seu e-mail. </span></h3>
+            <p>Insira no campo abaixo o código de verificação de 4 dígitos enviado para seu e-mail.</p>
+            <form >
           <input
             type="password"
             name="password"
-            placeholder="Digite sua senha"
+            placeholder="****"
           />
-          <br />
-          <Link to="/Login" className="botao-cadastro">
-          Cadastrar-se
-          </Link>
-          <Link to="/Login" className="botao-cadastro">
-          Já tem uma conta?
-          </Link>
-        </form>
+          <button type="submit">Enviar</button>
+            </form>
+            
+        </div>
       </div>
     </div>
   );
 };
 
-export default CadastroAdmin;
+export default Recuperacao;

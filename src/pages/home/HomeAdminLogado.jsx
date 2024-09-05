@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "../css/Home.css";
 import logo from "../../assets/logo1.png";
 import img1 from "../../assets/img1.png";
-import { Link, useNavigate } from "react-router-dom";  // Importa o useNavigate
+import imgperfil from "../../assets/imgperfil.png";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSearch,
@@ -13,30 +14,20 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-function Home() {
+function HomeAdminLogado() {
   const [searchTerm, setSearchTerm] = useState("");
-  const navigate = useNavigate();  
-
-  const handleButtonClick = () => {
-    navigate("/Cadastro");  
-  };
 
   return (
     <div className="tela-home">
       <div className="navbar">
         <div className="logo">
-          <Link to="/">
+          <Link to="/AdminLogado">
             <img src={logo} alt="logo" />
           </Link>
         </div>
-        <div className="nav-buttons">
-          <Link to="/Login">
-            <button className="botao-entrar">Entrar</button>
-          </Link>
-          <Link to="/Cadastro">
-            <button className="botao-cadastrar">
-              <span className="gradient">Cadastrar</span>
-            </button>
+        <div className="perfil">
+          <Link to="/Perfil">
+            <img src={imgperfil} alt="perfil" />
           </Link>
         </div>
       </div>
@@ -46,8 +37,11 @@ function Home() {
       </div>
       <div className="abaixo">
         <div className="botoes-duvidas">
-          <button className="botao-duvida" onClick={handleButtonClick}>  {/* Adiciona o evento onClick */}
-            <span className="gradient">Tire sua dúvida</span>
+          <button className="botao-duvida">
+            <span className="gradient">Suas Respostas</span>
+          </button>
+          <button className="botao-duvida">
+            <span className="gradient">Dúvidas não Respondidas</span>
           </button>
         </div>
         <h1 className="gradient">DÚVIDAS</h1>
@@ -64,10 +58,19 @@ function Home() {
               >
                 Área
               </button>
-              <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a className="dropdown-item" href="#">Área 1</a>
-                <a className="dropdown-item" href="#">Área 2</a>
-                <a className="dropdown-item" href="#">Área 3</a>
+              <div
+                className="dropdown-menu"
+                aria-labelledby="dropdownMenuButton"
+              >
+                <a className="dropdown-item" href="#">
+                  Área 1
+                </a>
+                <a className="dropdown-item" href="#">
+                  Área 2
+                </a>
+                <a className="dropdown-item" href="#">
+                  Área 3
+                </a>
               </div>
             </div>
 
@@ -82,9 +85,16 @@ function Home() {
               >
                 Status
               </button>
-              <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a className="dropdown-item" href="#">Respondido</a>
-                <a className="dropdown-item" href="#">Não Respondido</a>
+              <div
+                className="dropdown-menu"
+                aria-labelledby="dropdownMenuButton"
+              >
+                <a className="dropdown-item" href="#">
+                  Respondido
+                </a>
+                <a className="dropdown-item" href="#">
+                  Não Respondido
+                </a>
               </div>
             </div>
 
@@ -99,9 +109,16 @@ function Home() {
               >
                 Data
               </button>
-              <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a className="dropdown-item" href="#">Mais Recente</a>
-                <a className="dropdown-item" href="#">Mais Antigo</a>
+              <div
+                className="dropdown-menu"
+                aria-labelledby="dropdownMenuButton"
+              >
+                <a className="dropdown-item" href="#">
+                  Mais Recente
+                </a>
+                <a className="dropdown-item" href="#">
+                  Mais Antigo
+                </a>
               </div>
             </div>
           </div>
@@ -161,4 +178,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomeAdminLogado;

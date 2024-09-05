@@ -54,6 +54,11 @@
   margin-left: 30px;
 }
 
+.perfil img {
+  width: 50px;
+  margin-right: 50px;
+}
+
 .gradient {
   background-image: linear-gradient(to right, #8F2955, #E42B41, #D34E3A);
   background-clip: text;

@@ -1,101 +1,83 @@
-.tela-cadastroadmin{
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-}
-.tela-loginadmin{
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-}
-
-.tela-cadastrocliente{
+.tela-cadastroadmin {
   width: 100vw;
   height: 120vh;
   margin: 0;
-
 }
 
-.bemvindo{
-    color: #E42B41;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 30px;
+.tela-cadastrocliente {
+  width: 100vw;
+  height: 120vh;
+  margin: 0;
 }
 
-.labelCliente{
-    justify-content: left;
-    margin-right: 400px;
+.labelCliente {
+  justify-content: left;
+  margin-right: 400px;
 }
 
-
-.labelAdmin{
-    justify-content: left;
-    margin-right: 400px;
+.labelAdmin, .labelCliente {
+  justify-content: left;
+  margin-right: 400px;
 }
 
-.labelNome{
-    justify-content: left;
-    margin-right: 400px;
+.labelNome {
+  justify-content: left;
+  margin-right: 400px;
 }
 
+.cadastro-container {
+  width: 500px;
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  margin: auto;
+  text-align: center;
+  margin-top: 100px;
+}
 
+.cadastro-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-.login-container {
-    width: 500px;
-    background-color: #ffffff;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    align-items: center;
-    margin: auto;
+.cadastro-container label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
 
+.cadastro-container input[type="email"],
+.cadastro-container input[type="password"],
+.cadastro-container input[type="text"] {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
-  }
-  
-  .login-container form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .login-container label {
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .login-container input[type="email"],
-  .login-container input[type="password"],
-  .login-container input[type="text"]{
-    width: 100%;
-    height: 40px;
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .login-container input[type="email"]:focus,
-  .login-container input[type="password"]:focus {
-    border-color: #aaa;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .login-container button[type="submit"] {  
-    width: 100%;
-    height: 40px;
-    background-color: #E42B41;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    border-radius: 80px;
-  }
-  
-  .login-container button[type="submit"]:hover {
-    background-color: linear-gradient(to right, #8F2955, #E42B41, #D34E3A);
-  }
+.cadastro-container input[type="email"]:focus,
+.cadastro-container input[type="password"]:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-
+.botao-cadastro {
+  width: 400px;
+  height: 40px;
+  background-image: linear-gradient(to right, #8f2955, #e42b41, #d34e3a);
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border-radius: 80px;
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 30px;
+}

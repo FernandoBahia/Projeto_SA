@@ -21,17 +21,17 @@ body {
 .bem-vindo h1 {
     font-size: 30px;
     font-weight: bold;
+    color: #ffffff;
 }
 
 .bem-vindo img {
-    margin-top: 40px;
     width: 360px;
     margin-bottom: 100px;
 }
 
 .abaixo {
-    background-color: #F1F4F5;
-    height: 100vh;
+    background-color: #ffffff;
+    height: 120vh;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -198,3 +198,42 @@ body {
     font-size: 25px;
     margin-left: 10px;
 }
+
+.botoes-duvidas {
+    margin: auto;
+    align-items: center;
+    justify-content: space-around;
+    width: 40%;
+    display: flex;
+    margin-top: 70px;
+}
+
+.botoes-duvidas {
+    display: flex;
+    flex-direction: column; 
+  }
+  
+  .form-duvida input,
+  .form-duvida textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #E42B41;
+    border-radius: 5px;
+    text-align: left;
+    justify-content: left;
+  }
+  
+  .form-duvida button {
+    background-color: #E42B41;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .titulinho{
+    margin-right: 100%;
+    background-color: #ffffff;
+  }
+

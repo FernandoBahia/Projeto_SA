@@ -74,7 +74,6 @@ function HomeClienteLogado() {
     <option value="setor1">Setor 1</option>
     <option value="setor2">Setor 2</option>
     <option value="setor3">Setor 3</option>
-    {/* Adicione mais setores conforme necessário */}
   </select>
 </div>
 

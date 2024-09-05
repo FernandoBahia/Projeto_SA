@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../css/Home.css";
 import logo from "../../assets/logo1.png";
 import img1 from "../../assets/img1.png";
-import { Link, useNavigate } from "react-router-dom";  // Importa o useNavigate
+import { Link, useNavigate } from "react-router-dom";  
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSearch,
@@ -46,7 +46,7 @@ function Home() {
       </div>
       <div className="abaixo">
         <div className="botoes-duvidas">
-          <button className="botao-duvida" onClick={handleButtonClick}>  {/* Adiciona o evento onClick */}
+          <button className="botao-duvida" onClick={handleButtonClick}>  
             <span className="gradient">Tire sua dúvida</span>
           </button>
         </div>

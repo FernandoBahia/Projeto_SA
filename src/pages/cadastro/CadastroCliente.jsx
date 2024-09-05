@@ -50,7 +50,7 @@ const CadastroCliente = () => {
           <Link to="/Login" className="botao-cadastro">
           Cadastrar-se
           </Link>
-          <Link to="/Login" className="botao-cadastro">
+          <Link to="/Login" className="botao-ja-tem">
           Já tem uma conta?
           </Link>
         </form>

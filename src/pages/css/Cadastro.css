@@ -1,11 +1,9 @@
 .tela-cadastroadmin {
-  width: 100vw;
   height: 120vh;
   margin: 0;
 }
 
 .tela-cadastrocliente {
-  width: 100vw;
   height: 120vh;
   margin: 0;
 }
@@ -80,4 +78,9 @@
   text-decoration: none;
   text-align: center;
   margin-bottom: 30px;
+}
+
+.botao-ja-tem {
+  color: #333;
+  text-decoration: none;
 }

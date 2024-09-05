@@ -1,11 +1,9 @@
 .tela-logincliente {
-  width: 100vw;
-  height: 100vh;
+  height: 120vh;
   margin: 0;
 }
 .tela-loginadmin {
-  width: 100vw;
-  height: 100vh;
+  height: 120vh;
   margin: 0;
 }
 

@@ -38,8 +38,6 @@ const CadastroAdmin = () => {
           <br />
           <label className="labelEmail">Email:</label>
           <input type="email" name="email" placeholder="Digite seu email" />
-          <label className="labelEmail">CPF:</label>
-          <input type="email" name="email" placeholder="Digite seu CPF" />
           <label className="labelAdmin">Senha:</label>
           <input
             type="password"
@@ -50,7 +48,7 @@ const CadastroAdmin = () => {
           <Link to="/Login" className="botao-cadastro">
           Cadastrar-se
           </Link>
-          <Link to="/Login" className="botao-cadastro">
+          <Link to="/Login" className="botao-ja-tem">
           Já tem uma conta?
           </Link>
         </form>

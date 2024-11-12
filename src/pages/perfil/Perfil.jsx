@@ -1,21 +1,58 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../css/Navbar.css";
 import "../css/Perfil.css";
 import logo from "../../assets/logo1.png";
 import imgperfil from "../../assets/imgperfil.png";
 import imgperfil2 from "../../assets/imgperfil2.png";
-import profile from "../../assets/profile.png";
 import { Link } from "react-router-dom";
 
-function IrParaLogin() {
-  window.location.href = "/Login";
-}
+function Perfil() {
+  const [nome, setNome] = useState("");
+  const [cpf, setCpf] = useState("");
+  const [email, setEmail] = useState("");
 
-function IrParaCadastro() {
-  window.location.href = "/Cadastro";
-}
+  useEffect(() => {
+    // Função para buscar dados do perfil do servidor
+    const fetchProfile = async () => {
+      try {
+        const response = await fetch("http://seu-backend-url.com/perfil");
+        if (response.ok) {
+          const data = await response.json();
+          setNome(data.nome);
+          setCpf(data.cpf);
+          setEmail(data.email);
+        } else {
+          console.error("Erro ao buscar dados do perfil");
+        }
+      } catch (error) {
+        console.error("Erro de rede:", error);
+      }
+    };
 
-const Perfil = () => {
+    fetchProfile();
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("http://seu-backend-url.com/atualizar-perfil", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ nome, cpf, email }),
+      });
+
+      if (response.ok) {
+        alert("Dados atualizados com sucesso!");
+      } else {
+        console.error("Erro ao atualizar dados do perfil");
+      }
+    } catch (error) {
+      console.error("Erro de rede:", error);
+    }
+  };
+
   return (
     <div className="tela-perfil">
       <div className="navbar">
@@ -25,13 +62,12 @@ const Perfil = () => {
           </Link>
         </div>
         <div className="perfil">
-        <Link className="sair" to="/">
+          <Link className="sair" to="/">
             <h2>Sair</h2>
           </Link>
           <Link to="/Perfil">
             <img src={imgperfil} alt="perfil" />
           </Link>
-          
         </div>
       </div>
 
@@ -42,19 +78,31 @@ const Perfil = () => {
         <img src={imgperfil2} alt="perfil" />
       </div>
       <div className="dados">
-        <form>
+        <form onSubmit={handleSubmit}>
           <p>Nome Completo</p>
-          <input placeholder="Nome Completo" />
+          <input
+            placeholder="Nome Completo"
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
+          />
           <p>CPF</p>
-          <input placeholder="Insira seu CPF" />
+          <input
+            placeholder="Insira seu CPF"
+            value={cpf}
+            onChange={(e) => setCpf(e.target.value)}
+          />
           <p>Email</p>
-          <input placeholder="Insira seu Email" />
+          <input
+            placeholder="Insira seu Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
           <br />
-          <button className="botao-enviar">Enviar</button>
+          <button type="submit" className="botao-enviar">Enviar</button>
         </form>
       </div>
     </div>
   );
-};
+}
 
 export default Perfil;

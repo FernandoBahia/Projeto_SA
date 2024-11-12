@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/Navbar.css";
 import "../css/Login.css";
 import logo from "../../assets/logo1.png";
@@ -13,6 +13,34 @@ function IrParaCadastro() {
 }
 
 const LoginCliente = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    // Enviar dados para o back-end
+    try {
+      const response = await fetch("http://seu-backend-url.com/login-cliente", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (response.ok) {
+        // Redirecionar ou realizar alguma ação após o login bem-sucedido
+        console.log("Login bem-sucedido");
+      } else {
+        // Lidar com erros de login
+        console.error("Erro ao fazer login");
+      }
+    } catch (error) {
+      console.error("Erro de rede:", error);
+    }
+  };
+
   return (
     <div className="tela-logincliente">
       <div className="navbar">
@@ -31,24 +59,32 @@ const LoginCliente = () => {
         </div>
       </div>
       <div className="login-container">
-        <form>
+        <form onSubmit={handleSubmit}>
           <br />
           <br />
           <h4 className="bemvindo">Bem-Vindo Cliente</h4>
           <br />
-          <label className="labelEmail">Email:</label>
-          <input type="email" name="email" placeholder="Digite seu email" />
+          <label className="labelEmail" htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email_cliente"
+            name="email"
+            placeholder="Digite seu email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}/>
           <br />
-          <label className="labelAdmin">Senha:</label>
+          <label className="labelAdmin" htmlFor="password">Senha:</label>
           <input
             type="password"
+            id="password_cliente"
             name="password"
             placeholder="Digite sua senha"
-          />
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}/>
           <br />
-          <Link to="/ClienteLogado" className="botao-logar">
+          <button type="submit" className="botao-logar">
             Logar
-          </Link>
+          </button>
           <Link to="/Recuperacao" className="link">
             Esqueci minha senha
           </Link>
@@ -57,4 +93,5 @@ const LoginCliente = () => {
     </div>
   );
 };
+
 export default LoginCliente;
